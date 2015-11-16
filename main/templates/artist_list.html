@@ -1,0 +1,53 @@
+{% extends 'post3.html' %}
+{% load staticfiles %}
+
+{% block body %}
+<article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    {% for album in albums %}
+
+                    {{ album.album_title }}<br>
+
+                    {% endfor %}
+
+                    <h2 class="section-heading">Artist Listings</h2>
+
+                    {% for object in object_list %}
+
+                    <a href="/artist_detail/{{ object.name }}/">{{ object.artist_name }}</a>
+
+                    <br>
+
+                    {% endfor %}
+
+                    <a href="#">
+                        <img class="img-responsive" src='{% static "img/buring_note.jpeg" alt="" %}'>
+                    </a>
+                    <span class="caption text-muted">
+                    
+            </div>
+        </div>
+    </article>
+{% comment %}
+{{ object_list }}
+
+<b></b>
+
+
+{% for artist in artits %}
+
+{{ artist.artist_name }}<br>
+
+{% endfor %}
+
+
+
+{% for object in object_list %}
+
+<br>
+
+{% endfor %}
+{% endcomment %}
+{% endblock body %}

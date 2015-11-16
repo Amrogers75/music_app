@@ -1,0 +1,47 @@
+
+{% extends 'post.html' %}
+
+
+{% load staticfiles %}
+
+{% block body %}
+  <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    {% for album in albums %}
+
+                    {{ album.album_title }}<br>
+
+                    {% endfor %}
+
+                    <h2 class="section-heading">Albums Listings</h2>
+
+                    {% for object in object_list %}
+
+                    <a href="/albums_detail/{{ object.handle }}/">{{ object.album_title }}</a>
+                    <br>
+
+                    {% endfor %}
+
+                    <a href="#">
+                        <img class="img-responsive" src='{% static "img/buring_note.jpeg" alt="" %}'>
+                    </a>
+                    <span class="caption text-muted">
+                    
+            </div>
+        </div>
+    </article>
+{% endblock body %}
+{% comment %}
+{{ object_list }}</b>
+{% endcomment %}
+
+
+
+
+
+
+
+
